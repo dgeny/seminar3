@@ -1,1 +1,12 @@
-# Learning system of version control (git)
+# Learning system of version control (git).
+
+Git - это программа для ....
+
+---
+
+## Создание репозитория.
+
+Для того, чтобы создать (**инициализировать**) репозиторий в текущей папке используется команда:
+
+    git init
+
