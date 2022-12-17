@@ -33,15 +33,15 @@ Git - это программа для ....
 
 Часто используемые опции команды:
 
-- -m - добавление описания без вызова редактора. Пример использования:
+- `-m` - добавление описания без вызова редактора. Пример использования:
 
         git commit -m "FIX: main comment added"
 
-- -a - автоматическое добавление в индекс всех изменений во всех *отслеживаемых* файлах. Пример использования:
+- `-a` - автоматическое добавление в индекс всех изменений во всех *отслеживаемых* файлах. Пример использования:
 
         git commit -a
 
-- -am - опции можно совмещать. Данная комбинация автоматически добавляет все изменения во всех отслеживаемых
+- `-am` - опции можно совмещать. Данная комбинация автоматически добавляет все изменения во всех отслеживаемых
  файлах и сохраняет их в репозитории с указанным комментарием. Пример использования:
 
         git commit -am "Описав опции к командам, я сделаю очередной коммит"
@@ -52,3 +52,77 @@ Git - это программа для ....
 необходимо выполнить команду:
 
     git log
+
+### Опции форматирования:
+
+- `--oneline` - вывод в формате <короткий идентификатор изменения> <заголовок комментария>. Является короткой
+ ссылкой на `--pretty=oneline`. Пример использования:
+
+```bash
+$ git log --oneline
+e3d9d4c (HEAD -> master) Info about git log added
+68d8232 Info about git commit options added
+d803ac2 Info about git commit added
+556aff8 Info about git add added
+993dac7 Info about git status added
+75ee510 Info about git init added
+e003d83 Head added
+ab87d28 initial commit
+```
+
+### Опции ограничения вывода:
+
+- `--all` - вывод всех изменений в ветке репозитория независимо от того, на каком
+ изменении мы сейчас находимся. Пример использования:
+
+ ```bash
+ $  git log --all
+commit 8762a57d0ce95bd4448070aaa6519f5aece305b0 (master)  <-- последнее сохраненное состояние репозитория 
+Author: Eugene N <kan1fol@ya.ru>
+Date:   Sat Dec 17 16:52:32 2022 +0000
+
+    temp commit for '--all' option demonstration
+
+commit e3d9d4c321cb30911329f19418be1c3ba027b249
+Author: Eugene N <kan1fol@ya.ru>
+Date:   Sat Dec 17 16:29:08 2022 +0000
+
+    Info about git log added
+
+commit 68d8232e827f6ac21c59a6f26e89f4776454c226
+Author: Eugene N <kan1fol@ya.ru>
+Date:   Sat Dec 17 16:21:25 2022 +0000
+
+    Info about git commit options added
+
+commit d803ac24942bff8b0f290787f1652ae102832846
+Author: Eugene N <kan1fol@ya.ru>
+Date:   Sat Dec 17 16:08:26 2022 +0000
+
+    Info about git commit added
+
+commit 556aff8fb7384b74861c42cda31010357a3b1966 (HEAD)<<-- наша текущая позиция в состоянии репозитория 
+Author: Eugene N <kan1fol@ya.ru>
+Date:   Sat Dec 17 16:00:59 2022 +0000
+
+    Info about git add added
+
+: ...
+
+``` 
+Опции команды отображения журнала также являются комбинируемыми (если не взаимоисключающие). Пример использования:
+
+```
+$  git log --all --oneline
+8762a57 (master) temp commit for '--all' option demonstration
+e3d9d4c Info about git log added
+68d8232 Info about git commit options added
+d803ac2 Info about git commit added
+556aff8 (HEAD) Info about git add added
+993dac7 Info about git status added
+75ee510 Info about git init added
+e003d83 Head added
+ab87d28 initial commit
+
+```
+
