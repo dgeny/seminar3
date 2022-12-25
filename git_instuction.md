@@ -270,4 +270,4 @@ index a7b4bff..2085eea 100644
         tool = vim # or any other
 ```
 
-~~Но я бы пугал обучаемых vimdiff~~ 
+~~Но я бы пугал обучаемых vimdiff~~
