@@ -231,4 +231,5 @@ index a7b4bff..2085eea 100644
 
 #### Конфликт слияния
 
-SDSADAsfdgkhjlkweurthgpnvz
+Иногда при написании одной строки ...
+
